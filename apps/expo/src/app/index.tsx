@@ -13,17 +13,15 @@ const PostCard: React.FC<{
   const router = useRouter();
 
   return (
-    <View className="flex flex-row rounded-lg bg-white/10 p-4">
-      <View className="flex-grow">
+    <View>
+      <View>
         <TouchableOpacity onPress={() => router.push(`/post/${post.id}`)}>
-          <Text className="text-xl font-semibold text-pink-400">
-            {post.title}
-          </Text>
-          <Text className="mt-2 text-white">{post.content}</Text>
+          <Text>{post.title}</Text>
+          <Text>{post.content}</Text>
         </TouchableOpacity>
       </View>
       <TouchableOpacity onPress={onDelete}>
-        <Text className="font-bold uppercase text-pink-400">Delete</Text>
+        <Text>Delete</Text>
       </TouchableOpacity>
     </View>
   );
@@ -44,33 +42,26 @@ const CreatePost: React.FC = () => {
   });
 
   return (
-    <View className="mt-4">
+    <View>
       <TextInput
-        className="mb-2 rounded bg-white/10 p-2 text-white"
         placeholderTextColor="rgba(255, 255, 255, 0.5)"
         value={title}
         onChangeText={setTitle}
         placeholder="Title"
       />
       {error?.data?.zodError?.fieldErrors.title && (
-        <Text className="mb-2 text-red-500">
-          {error.data.zodError.fieldErrors.title}
-        </Text>
+        <Text>{error.data.zodError.fieldErrors.title}</Text>
       )}
       <TextInput
-        className="mb-2 rounded bg-white/10 p-2 text-white"
         placeholderTextColor="rgba(255, 255, 255, 0.5)"
         value={content}
         onChangeText={setContent}
         placeholder="Content"
       />
       {error?.data?.zodError?.fieldErrors.content && (
-        <Text className="mb-2 text-red-500">
-          {error.data.zodError.fieldErrors.content}
-        </Text>
+        <Text>{error.data.zodError.fieldErrors.content}</Text>
       )}
       <TouchableOpacity
-        className="rounded bg-pink-400 p-2"
         onPress={() => {
           mutate({
             title,
@@ -78,7 +69,7 @@ const CreatePost: React.FC = () => {
           });
         }}
       >
-        <Text className="font-semibold text-white">Publish post</Text>
+        <Text>Publish post</Text>
       </TouchableOpacity>
     </View>
   );
@@ -94,12 +85,12 @@ const Index = () => {
   });
 
   return (
-    <SafeAreaView className="bg-[#1F104A]">
+    <SafeAreaView>
       {/* Changes page title visible on the header */}
       <Stack.Screen options={{ title: "Home Page" }} />
-      <View className="h-full w-full p-4">
-        <Text className="mx-auto pb-2 text-5xl font-bold text-white">
-          Create <Text className="text-pink-400">T3</Text> Turbo
+      <View>
+        <Text>
+          Create <Text>T3</Text> Turbo
         </Text>
 
         <Button
@@ -108,20 +99,18 @@ const Index = () => {
           color={"#f472b6"}
         />
 
-        <View className="py-2">
-          <Text className="font-semibold italic text-white">
-            Press on a post
-          </Text>
+        <View>
+          <Text>Press on a post</Text>
         </View>
 
         <FlashList
           data={postQuery.data}
           estimatedItemSize={20}
-          ItemSeparatorComponent={() => <View className="h-2" />}
+          ItemSeparatorComponent={() => <View />}
           renderItem={(p) => (
             <PostCard
               post={p.item}
-              onDelete={() => deletePostMutation.mutate(p.item.id)}
+              onDelete={() => deletePostMutation.mutate(p.item?.id)}
             />
           )}
         />

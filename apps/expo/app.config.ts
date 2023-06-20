@@ -1,5 +1,7 @@
 import type { ExpoConfig } from "@expo/config";
 
+const CLERK_PUBLISHABLE_KEY = "your-clerk-publishable-key";
+
 const defineConfig = (): ExpoConfig => ({
   name: "expo",
   slug: "expo",
@@ -31,6 +33,7 @@ const defineConfig = (): ExpoConfig => ({
     eas: {
       // projectId: "your-project-id",
     },
+    CLERK_PUBLISHABLE_KEY,
   },
   plugins: ["./expo-plugins/with-modify-gradle.js"],
 });
