@@ -1,6 +1,6 @@
 import type { ExpoConfig } from "@expo/config";
 
-const CLERK_PUBLISHABLE_KEY = "your-clerk-publishable-key";
+const CLERK_PUBLISHABLE_KEY = "pk_test_b24tdGV0cmEtMTQuY2xlcmsuYWNjb3VudHMuZGV2JA";
 
 const defineConfig = (): ExpoConfig => ({
   name: "expo",
@@ -13,7 +13,7 @@ const defineConfig = (): ExpoConfig => ({
   splash: {
     image: "./assets/icon.png",
     resizeMode: "contain",
-    backgroundColor: "#1F104A",
+    backgroundColor: "#1F1082",
   },
   updates: {
     fallbackToCacheTimeout: 0,
