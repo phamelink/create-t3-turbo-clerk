@@ -1,0 +1,19 @@
+{
+    "Inbox": "Inbox",
+    "Settings": "Settings",
+    "Logout": "Logout",
+    "Messages": "Messages",
+    "Profile": "Profile",
+    "Pricing": "Pricing",
+    "FAQ": "FAQ",
+
+    "Something went wrong. Please try again.": "Something went wrong. Please try again.",
+    "Welcome to": "Welcome to {{appName}}! 👋🏻",
+    "Please sign-in to your account and start the adventure": "Please sign-in to your account and start the adventure",
+    "Password": "Password",
+    "Forgot Password?": "Forgot Password?",
+    "Login": "Login",
+    "New on our platform?": "New on our platform?",
+    "Create an account": "Create an account",
+    "Remember me": "Remember me"
+}

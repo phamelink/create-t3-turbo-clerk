@@ -1,6 +1,7 @@
-import type { ExpoConfig } from "@expo/config";
+import type { ExpoConfig } from "@expo/config"
 
-const CLERK_PUBLISHABLE_KEY = "pk_test_b24tdGV0cmEtMTQuY2xlcmsuYWNjb3VudHMuZGV2JA";
+const CLERK_PUBLISHABLE_KEY =
+  "pk_test_b24tdGV0cmEtMTQuY2xlcmsuYWNjb3VudHMuZGV2JA"
 
 const defineConfig = (): ExpoConfig => ({
   name: "expo",
@@ -36,6 +37,6 @@ const defineConfig = (): ExpoConfig => ({
     CLERK_PUBLISHABLE_KEY,
   },
   plugins: ["./expo-plugins/with-modify-gradle.js"],
-});
+})
 
-export default defineConfig;
+export default defineConfig

@@ -9,7 +9,7 @@ const config = {
   jsxSingleQuote: false,
   semi: false,
   trailingComma: "all",
-  tabWidth: 2,
+  tabWidth: 4,
   // pluginSearchDirs: false,
   plugins: ["@ianvs/prettier-plugin-sort-imports"],
   importOrder: [
@@ -24,10 +24,10 @@ const config = {
     "^~/components/(.*)$",
     "^~/styles/(.*)$",
     "^~/(.*)$",
-    "^[./]"
+    "^[./]",
   ],
   importOrderParserPlugins: ["typescript", "jsx", "decorators-legacy"],
-  importOrderTypeScriptVersion: "5.0.4"
+  importOrderTypeScriptVersion: "5.0.4",
 }
 
 module.exports = config
