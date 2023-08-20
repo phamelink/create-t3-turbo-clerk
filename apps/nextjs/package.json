@@ -55,6 +55,7 @@
         "keen-slider": "6.8.5",
         "micro": "^10.0.1",
         "next": "^13.4.4",
+        "next-i18next": "^14.0.0",
         "nprogress": "0.2.0",
         "payment": "2.4.6",
         "react": "18.2.0",

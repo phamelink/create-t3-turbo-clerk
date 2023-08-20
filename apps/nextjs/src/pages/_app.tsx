@@ -9,6 +9,7 @@ import { Router } from "next/router"
 import type { EmotionCache } from "@emotion/cache"
 // ** Emotion Imports
 import { CacheProvider } from "@emotion/react"
+import { appWithTranslation } from "next-i18next"
 // ** Loader Import
 import NProgress from "nprogress"
 // ** Third Party Import
@@ -193,4 +194,4 @@ const App = (props: ExtendedAppProps) => {
     )
 }
 
-export default api.withTRPC(App)
+export default api.withTRPC(appWithTranslation(App))

@@ -6,6 +6,8 @@ import zodEn from "public/locales/en/zod.json"
 import commonFr from "public/locales/fr/common.json"
 import zodFr from "public/locales/fr/zod.json"
 import { initReactI18next } from "react-i18next"
+import * as z from "zod"
+import { zodI18nMap } from "zod-i18n-map"
 
 i18n
     // Enables the i18next backend
@@ -17,23 +19,23 @@ i18n
     .use(initReactI18next)
     .init({
         lng: "fr",
-        ns: ["common"],
-        // resources: {
-        //     fr: {
-        //         zod: zodFr,
-        //         common: commonFr,
-        //     },
-        //     en: {
-        //         zod: zodEn,
-        //         common: commonEn,
-        //     },
-        // },
+        ns: ["common", "zod"],
+        resources: {
+            fr: {
+                zod: zodFr,
+                common: commonFr,
+            },
+            en: {
+                zod: zodEn,
+                common: commonEn,
+            },
+        },
         backend: {
             /* translation file path */
             loadPath: "/locales/{{lng}}/{{ns}}.json",
         },
-        // fallbackLng: "fr",
-        debug: true,
+
+        debug: false,
         keySeparator: false,
         react: {
             useSuspense: false,
